@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+.terminal-glow {
+  box-shadow: 0 0 20px rgba(109, 40, 217, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+
+.terminal-glow:hover {
+  box-shadow: 0 0 30px rgba(109, 40, 217, 0.5);
+}
+
+/* 3D Flip Card Styles */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
