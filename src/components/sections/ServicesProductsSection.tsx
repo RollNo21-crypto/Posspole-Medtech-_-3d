@@ -242,7 +242,7 @@ export const ServicesProductsSection = () => {
             viewport={{ once: true }}
             className="px-3 py-1 text-xs font-semibold tracking-wider uppercase bg-primary-100 border border-primary-200 rounded-full text-primary-700 inline-block mb-4"
           >
-            Our Products
+             Products
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -251,7 +251,7 @@ export const ServicesProductsSection = () => {
             viewport={{ once: true }}
             className="text-3xl md:text-4xl font-display font-bold text-neutral-900 mb-6"
           >
-            Services & Products
+            Our Products
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

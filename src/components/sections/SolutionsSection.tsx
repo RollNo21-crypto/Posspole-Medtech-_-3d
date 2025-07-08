@@ -644,7 +644,7 @@ export const SolutionsSection = () => {
             viewport={{ once: true }}
             className="px-3 py-1 text-xs font-semibold tracking-wider uppercase bg-primary-100 border border-primary-200 rounded-full text-black inline-block mb-4"
           >
-            Our Services
+             Services
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -653,7 +653,7 @@ export const SolutionsSection = () => {
             viewport={{ once: true }}
             className="text-2xl md:text-4xl font-display font-bold text-black mb-4 md:mb-6"
           >
-         POSSPOLE Services
+         Our Services
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
