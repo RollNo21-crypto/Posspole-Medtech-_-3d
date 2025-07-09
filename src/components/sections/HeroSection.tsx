@@ -20,7 +20,7 @@ export const HeroSection = () => {
   }, []);
 
   return (
-    <section id="hero" className="min-h-screen relative flex items-center overflow-hidden pt-24 pb-16">
+    <section id="hero" className="min-h-screen relative flex items-center overflow-hidden pt-24 pb-16" role="banner" aria-label="Hero section">
       <div className="absolute inset-0 bg-background">
         <div className="absolute inset-0 bg-gradient-to-b from-primary-100 via-background to-background"></div>
         <div className="absolute inset-0 opacity-40 animate-gradient bg-[length:400%_400%]" style={{ 
@@ -48,6 +48,7 @@ export const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold leading-tight text-black mb-6">
+                <span className="sr-only">POSSPOLE MEDTECH - </span>
                 <Typewriter
                   options={{
                     strings: ['Revolutionizing Healthcare. Empowering Lives.'],
@@ -65,8 +66,12 @@ export const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
               className="text-lg md:text-xl text-black mb-8 max-w-xl"
+              role="text"
+              aria-describedby="hero-description"
             >
-              We're pioneering cutting-edge technologies to create a unified vision for global health, bringing together science, data, and human expertise.
+              <span id="hero-description">
+                We're pioneering cutting-edge technologies to create a unified vision for global health, bringing together science, data, and human expertise.
+              </span>
             </motion.p>
 
             <motion.div
@@ -80,6 +85,8 @@ export const HeroSection = () => {
                 whileHover={{ scale: 1.05, boxShadow: '0 0 20px 5px rgba(109, 40, 217, 0.4)' }}
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-full shadow-md transition-all"
+                role="button"
+                aria-label="Get started with POSSPOLE MEDTECH services"
               >
                 Get Started
               </motion.a>
@@ -88,6 +95,8 @@ export const HeroSection = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-3 bg-transparent border border-neutral-300 hover:border-primary-500 text-black font-medium rounded-full hover:bg-primary-100 transition-all flex items-center gap-2"
+                role="button"
+                aria-label="Explore our healthcare solutions and services"
               >
                 Explore Services
               </motion.a>

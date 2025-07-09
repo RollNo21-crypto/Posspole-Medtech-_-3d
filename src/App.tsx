@@ -1,79 +1,94 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { useEffect, useState } from 'react';
+import { HelmetProvider } from 'react-helmet-async';
 import { ScrollProgressIndicator } from './components/ui/ScrollProgressIndicator';
 import { Navbar } from './components/layout/Navbar';
 import { FloatingActionButton } from './components/ui/FloatingActionButton';
 import { HeroSection } from './components/sections/HeroSection';
-import { MissionVisionSection } from './components/sections/MissionVisionSection';
-import { SolutionsSection } from './components/sections/SolutionsSection';
-import { BenefitsSection } from './components/sections/BenefitsSection';
-import { ServicesProductsSection } from './components/sections/ServicesProductsSection';
-import { PartnersSection } from './components/sections/PartnersSection';
-import { InfrastructureSection } from './components/sections/InfrastructureSection';
-import { TeamSection } from './components/sections/TeamSection';
-import { ContactSection } from './components/sections/ContactSection';
 import { Footer } from './components/layout/Footer';
 import { CustomCursor } from './components/ui/CustomCursor';
 import { Preloader } from './components/ui/Preloader';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { SEOHead } from './components/SEO/SEOHead';
+import { useScrollTriggerBatch } from './hooks/useOptimizedGSAP';
+
+// Lazy load non-critical components
+const MissionVisionSection = lazy(() => import('./components/sections/MissionVisionSection').then(module => ({ default: module.MissionVisionSection })));
+const SolutionsSection = lazy(() => import('./components/sections/SolutionsSection').then(module => ({ default: module.SolutionsSection })));
+const BenefitsSection = lazy(() => import('./components/sections/BenefitsSection').then(module => ({ default: module.BenefitsSection })));
+const ServicesProductsSection = lazy(() => import('./components/sections/ServicesProductsSection').then(module => ({ default: module.ServicesProductsSection })));
+const PartnersSection = lazy(() => import('./components/sections/PartnersSection').then(module => ({ default: module.PartnersSection })));
+const ContactSection = lazy(() => import('./components/sections/ContactSection').then(module => ({ default: module.ContactSection })));
+
+// Loading fallback component
+const SectionLoader = () => (
+  <div className="flex items-center justify-center py-20">
+    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-500"></div>
+  </div>
+);
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    
-    // Register scroll animations
-    const sections = document.querySelectorAll('section');
-    sections.forEach((section) => {
-      gsap.fromTo(
-        section.querySelectorAll('.animate-on-scroll'),
-        { y: 50, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 0.8,
-          stagger: 0.2,
-          scrollTrigger: {
-            trigger: section,
-            start: 'top 70%',
-            end: 'bottom 20%',
-            toggleActions: 'play none none none',
-          },
-        }
-      );
-    });
+  // Use optimized scroll trigger batch for better performance
+  useScrollTriggerBatch();
 
-    return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+  useEffect(() => {
+    // Preload critical resources
+    const preloadResources = () => {
+      const criticalImages = [
+        '/assets/posspole.png',
+        '/assets/aum logo.jpg'
+      ];
+      
+      criticalImages.forEach(src => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = src;
+        document.head.appendChild(link);
+      });
     };
+
+    preloadResources();
   }, []);
 
   return (
-    <div className="relative overflow-hidden">
-      <Preloader minLoadingTime={3000} forceDisplay={true} onLoadingComplete={() => setIsLoading(false)} />
-      {!isLoading && (
-        <>
-          <CustomCursor />
-          <ScrollProgressIndicator />
-          <Navbar />
-          <main>
-            <HeroSection />
-            <MissionVisionSection />
-            <BenefitsSection />
-            <PartnersSection />
-            <SolutionsSection />
-            <ServicesProductsSection />
-            {/* <InfrastructureSection /> */}
-            {/* <TeamSection /> */}
-            <ContactSection />
-          </main>
-          <FloatingActionButton />
-          <Footer />
-        </>
-      )}
-    </div>
+    <HelmetProvider>
+      <SEOHead />
+      <div className="relative overflow-hidden">
+        <Preloader minLoadingTime={1000} forceDisplay={true} onLoadingComplete={() => setIsLoading(false)} />
+        {!isLoading && (
+          <>
+            <CustomCursor />
+            <ScrollProgressIndicator />
+            <Navbar />
+            <main>
+              <HeroSection />
+              <Suspense fallback={<SectionLoader />}>
+                <MissionVisionSection />
+              </Suspense>
+              <Suspense fallback={<SectionLoader />}>
+                <BenefitsSection />
+              </Suspense>
+              <Suspense fallback={<SectionLoader />}>
+                <PartnersSection />
+              </Suspense>
+              <Suspense fallback={<SectionLoader />}>
+                <SolutionsSection />
+              </Suspense>
+              <Suspense fallback={<SectionLoader />}>
+                <ServicesProductsSection />
+              </Suspense>
+              <Suspense fallback={<SectionLoader />}>
+                <ContactSection />
+              </Suspense>
+            </main>
+            <FloatingActionButton />
+            <Footer />
+          </>
+        )}
+      </div>
+    </HelmetProvider>
   );
 }
 

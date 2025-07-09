@@ -8,30 +8,54 @@ interface PreloaderProps {
   onLoadingComplete?: () => void; // Callback when loading is complete
 }
 
-export const Preloader: React.FC<PreloaderProps> = ({ minLoadingTime = 8000, forceDisplay = true, onLoadingComplete }) => {
+export const Preloader: React.FC<PreloaderProps> = ({ minLoadingTime = 1000, forceDisplay = true, onLoadingComplete }) => {
   const [loading, setLoading] = useState(true);
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    // Simulate minimum loading time to ensure animation is visible
-    const timer = setTimeout(() => {
-      setLoading(false);
-      onLoadingComplete?.();
-    }, minLoadingTime);
+    // Check if page resources are loaded
+    const checkPageLoad = () => {
+      if (document.readyState === 'complete') {
+        return true;
+      }
+      return false;
+    };
 
-    // Create progress animation that updates every 100ms
+    // Fast progress animation
     const progressInterval = setInterval(() => {
       setProgress(prev => {
-        const newProgress = prev + (100 / (minLoadingTime / 100));
+        const increment = checkPageLoad() ? 15 : 8; // Faster when page is loaded
+        const newProgress = prev + increment;
         return newProgress > 100 ? 100 : newProgress;
       });
-    }, 100);
+    }, 50); // Update every 50ms for smoother animation
+
+    // Minimum loading time with early completion check
+    const timer = setTimeout(() => {
+      if (checkPageLoad() || progress >= 100) {
+        setLoading(false);
+        onLoadingComplete?.();
+      }
+    }, Math.max(minLoadingTime, 500)); // Minimum 500ms
+
+    // Listen for page load completion
+    const handleLoad = () => {
+      if (progress >= 80) { // Allow early completion if progress is high
+        setTimeout(() => {
+          setLoading(false);
+          onLoadingComplete?.();
+        }, 200);
+      }
+    };
+
+    window.addEventListener('load', handleLoad);
 
     return () => {
       clearTimeout(timer);
       clearInterval(progressInterval);
+      window.removeEventListener('load', handleLoad);
     };
-  }, [minLoadingTime]);
+  }, [minLoadingTime, progress, onLoadingComplete]);
 
   return (
     <AnimatePresence>

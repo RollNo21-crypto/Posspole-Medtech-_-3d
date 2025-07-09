@@ -1,17 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { 
   Heart, 
   Brain, 
-  Microscope, 
-  BadgeCheck, 
-  Leaf, 
   Globe, 
-  Laptop, 
   PieChart, 
-  ShieldCheck,
-  CheckCircle,
   Users,
   LineChart,
   Shield,
@@ -180,7 +174,7 @@ const StepCard: React.FC<StepCardProps> = ({ number, icon, title, description, c
 export const SolutionsSection = () => {
   const [activeStep, setActiveStep] = useState(0);
   const [deviceType, setDeviceType] = useState<'desktop' | 'tablet' | 'mobile'>('desktop');
-  const autoScrollRef = useRef<number | null>(null);
+  const autoScrollRef = useRef<NodeJS.Timeout | null>(null);
   
   // Check screen size on component mount and window resize
   useEffect(() => {
@@ -210,7 +204,7 @@ export const SolutionsSection = () => {
       // Start auto-scroll
       autoScrollRef.current = setInterval(() => {
         setActiveStep(prev => (prev === solutionSteps.length - 1 ? 0 : prev + 1));
-      }, 5000);
+      }, 5000) as NodeJS.Timeout;
       
       // Cleanup
       return () => {
@@ -382,7 +376,7 @@ export const SolutionsSection = () => {
       // Restart auto-scroll after user interaction
       autoScrollRef.current = setInterval(() => {
         setActiveStep(prev => (prev === solutionSteps.length - 1 ? 0 : prev + 1));
-      }, 5000);
+      }, 5000) as NodeJS.Timeout;
     };
 
     const prevStep = () => {
@@ -394,7 +388,7 @@ export const SolutionsSection = () => {
       // Restart auto-scroll after user interaction
       autoScrollRef.current = setInterval(() => {
         setActiveStep(prev => (prev === solutionSteps.length - 1 ? 0 : prev + 1));
-      }, 5000);
+      }, 5000) as NodeJS.Timeout;
     };
 
     return (
@@ -481,7 +475,7 @@ export const SolutionsSection = () => {
                   // Restart auto-scroll after user interaction
                   autoScrollRef.current = setInterval(() => {
                     setActiveStep(prev => (prev === solutionSteps.length - 1 ? 0 : prev + 1));
-                  }, 5000);
+                  }, 5000) as NodeJS.Timeout;
                 }}
                 whileHover={{ scale: 1.2 }}
                 whileTap={{ scale: 0.9 }}
@@ -504,7 +498,7 @@ export const SolutionsSection = () => {
       // Restart auto-scroll after user interaction
       autoScrollRef.current = setInterval(() => {
         setActiveStep(prev => (prev === solutionSteps.length - 1 ? 0 : prev + 1));
-      }, 5000);
+      }, 5000) as NodeJS.Timeout;
     };
 
     const prevStep = () => {
@@ -516,7 +510,7 @@ export const SolutionsSection = () => {
       // Restart auto-scroll after user interaction
       autoScrollRef.current = setInterval(() => {
         setActiveStep(prev => (prev === solutionSteps.length - 1 ? 0 : prev + 1));
-      }, 5000);
+      }, 5000) as NodeJS.Timeout;
     };
 
     return (
@@ -615,7 +609,7 @@ export const SolutionsSection = () => {
                   // Restart auto-scroll after user interaction
                   autoScrollRef.current = setInterval(() => {
                     setActiveStep(prev => (prev === solutionSteps.length - 1 ? 0 : prev + 1));
-                  }, 5000);
+                  }, 5000) as NodeJS.Timeout;
                 }}
                 whileHover={{ scale: 1.2 }}
                 whileTap={{ scale: 0.9 }}
