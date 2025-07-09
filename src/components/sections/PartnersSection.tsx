@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 // Import partner logos
+import partner1 from '/assetpartners/1.png';
 import partner2 from '/assetpartners/2.png';
 import partner3 from '/assetpartners/3.png';
 import partner4 from '/assetpartners/4.png';
@@ -73,6 +74,7 @@ const InfiniteMarquee: React.FC<{ direction?: 'left' | 'right'; speed?: number; 
 
 export const PartnersSection = () => {
   const partners = [
+    {name:"Partner 1",logo:partner1},
     { name: "Partner 2", logo: partner2 },
     { name: "Partner 3", logo: partner3 },
     { name: "Partner 4", logo: partner4 },
