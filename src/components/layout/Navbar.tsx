@@ -97,53 +97,84 @@ export const Navbar = () => {
         {/* Tablet/Mobile Menu */}
         <AnimatePresence>
           {isMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3 }}
-              className="lg:hidden fixed inset-0 top-16 bg-white/95 backdrop-blur-md z-40"
-            >
-              <div className="container mx-auto px-6 py-8">
-                <div className="flex flex-col space-y-8">
-                  {navLinks.map((link, index) => (
+            <>
+              {/* Backdrop */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="lg:hidden fixed inset-0 bg-black/50 z-40"
+                onClick={() => setIsMenuOpen(false)}
+              />
+              
+              {/* Sliding Menu */}
+              <motion.div
+                initial={{ x: '100%' }}
+                animate={{ x: 0 }}
+                exit={{ x: '100%' }}
+                transition={{ duration: 0.4, ease: 'easeInOut' }}
+                className="lg:hidden fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl z-50"
+              >
+                <div className="flex flex-col h-full">
+                  {/* Header */}
+                  <div className="flex items-center justify-between p-6 border-b border-neutral-200">
+                    <h3 className="text-xl font-bold text-neutral-900">Menu</h3>
+                    <motion.button
+                      onClick={() => setIsMenuOpen(false)}
+                      className="p-2 hover:bg-neutral-100 rounded-lg transition-colors"
+                      whileTap={{ scale: 0.9 }}
+                    >
+                      <X size={24} className="text-neutral-600" />
+                    </motion.button>
+                  </div>
+                  
+                  {/* Navigation Links */}
+                  <div className="flex-1 px-6 py-4 overflow-y-auto">
+                    <div className="space-y-2">
+                      {navLinks.map((link, index) => (
+                        <motion.div
+                          key={link.label}
+                          initial={{ opacity: 0, x: 20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          exit={{ opacity: 0, x: 20 }}
+                          transition={{ duration: 0.3, delay: index * 0.05 }}
+                        >
+                          <a
+                            href={link.href}
+                            className="flex items-center text-lg font-medium text-neutral-700 hover:text-primary-700 hover:bg-primary-50 py-3 px-4 rounded-lg transition-all group"
+                            onClick={() => setIsMenuOpen(false)}
+                          >
+                            <span className="inline-flex items-center justify-center w-8 h-8 mr-3 rounded-full bg-primary-100 text-primary-700 text-sm group-hover:bg-primary-200 transition-colors">
+                              {index + 1}
+                            </span>
+                            {link.label}
+                          </a>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  {/* Footer CTA */}
+                  <div className="p-6 border-t border-neutral-200">
                     <motion.div
-                      key={link.label}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: -20 }}
-                      transition={{ duration: 0.4, delay: index * 0.05 }}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 20 }}
+                      transition={{ duration: 0.4, delay: 0.2 }}
                     >
                       <a
-                        href={link.href}
-                        className="flex items-center text-xl font-medium text-black hover:text-primary-700 py-3 border-b border-neutral-200 hover:border-primary-500 transition-all"
+                        href="#contact"
+                        className="block bg-primary-600 hover:bg-primary-700 text-white py-3 px-6 rounded-xl text-center font-medium shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
                         onClick={() => setIsMenuOpen(false)}
                       >
-                        <span className="inline-flex items-center justify-center w-8 h-8 mr-3 rounded-full bg-primary-100 text-primary-700 text-sm">
-                          {index + 1}
-                        </span>
-                        {link.label}
+                        Get Started
                       </a>
                     </motion.div>
-                  ))}
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 20 }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
-                    className="pt-4"
-                  >
-                    <a
-                      href="#contact"
-                      className="inline-block bg-primary-600 hover:bg-primary-700 text-white py-4 px-8 rounded-xl text-lg w-full text-center font-medium shadow-md shadow-primary-500/20"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      Get Started
-                    </a>
-                  </motion.div>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </>
           )}
         </AnimatePresence>
       </nav>

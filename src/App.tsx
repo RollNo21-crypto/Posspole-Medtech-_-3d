@@ -74,10 +74,10 @@ function App() {
                 <PartnersSection />
               </Suspense>
               <Suspense fallback={<SectionLoader />}>
-                <SolutionsSection />
+                <ServicesProductsSection />
               </Suspense>
               <Suspense fallback={<SectionLoader />}>
-                <ServicesProductsSection />
+                <SolutionsSection />
               </Suspense>
               <Suspense fallback={<SectionLoader />}>
                 <ContactSection />
