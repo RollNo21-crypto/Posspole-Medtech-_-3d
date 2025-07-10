@@ -160,7 +160,7 @@ personalized healthcare—to the global market. Focused on accessibility, precis
             >
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent z-10"></div>
               <img 
-                src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                src="/assetpartners/events.png"
                 alt="Healthcare professionals collaborating" 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
