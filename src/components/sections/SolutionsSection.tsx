@@ -514,92 +514,110 @@ export const SolutionsSection = () => {
     };
 
     return (
-      <div className="py-8">
+      <div className="py-4">
         {/* Enhanced Carousel for Mobile */}
-        <div className="relative overflow-hidden px-2 pb-10">
+        <div className="relative overflow-visible">
           {/* Navigation Buttons */}
-          <div className="flex justify-between items-center absolute inset-x-0 top-1/2 transform -translate-y-1/2 z-10 px-2">
+          <div className="flex justify-between items-center absolute inset-x-0 top-1/2 transform -translate-y-1/2 z-20 px-4">
             <motion.button 
               onClick={prevStep}
-              className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-neutral-900 shadow-lg border border-neutral-100"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="w-12 h-12 rounded-full bg-transparent flex items-center justify-center text-neutral-700/60 hover:text-neutral-700"
+              whileHover={{ scale: 1.1, backgroundColor: 'rgba(255,255,255,0.1)' }}
+              whileTap={{ scale: 0.9 }}
             >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
               </svg>
             </motion.button>
             <motion.button 
               onClick={nextStep}
-              className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-neutral-900 shadow-lg border border-neutral-100"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="w-12 h-12 rounded-full bg-transparent flex items-center justify-center text-neutral-700/60 hover:text-neutral-700"
+              whileHover={{ scale: 1.1, backgroundColor: 'rgba(255,255,255,0.1)' }}
+              whileTap={{ scale: 0.9 }}
             >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
               </svg>
             </motion.button>
           </div>
 
-          {/* Carousel Cards with AnimatePresence for smooth transitions */}
-          <div className="overflow-hidden">
+          {/* Carousel Cards with full-width design */}
+          <div className="overflow-hidden -mx-4">
             <motion.div 
               className="flex"
               animate={{ x: `-${activeStep * 100}%` }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
             >
               {solutionSteps.map((step, index) => (
-                <div key={index} className="w-full flex-shrink-0 px-3">
+                <div key={index} className="w-full flex-shrink-0 px-4">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="bg-white border border-neutral-100 rounded-xl p-6 shadow-lg text-black aspect-square"
+                    className="relative overflow-hidden rounded-3xl min-h-[320px] flex flex-col justify-center items-center text-center p-8"
+                    style={{
+                      background: `linear-gradient(135deg, ${step.color}15 0%, ${step.color}25 100%)`,
+                    }}
                     whileHover={{ 
-                      scale: 1.05, 
-                      boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-                      borderColor: step.color 
+                      scale: 1.02,
+                      transition: { duration: 0.2 }
                     }}
                   >
-                    {/* Number first */}
-                    <div 
-                      className="flex items-center justify-center w-14 h-14 rounded-full text-white font-bold text-lg mb-4 shadow-md mx-auto"
-                      style={{ backgroundColor: step.color }}
-                    >
-                      {step.number}
+                    {/* Background decoration */}
+                    <div className="absolute inset-0 overflow-hidden">
+                      <div 
+                        className="absolute -top-10 -right-10 w-32 h-32 rounded-full opacity-20"
+                        style={{ backgroundColor: step.color }}
+                      />
+                      <div 
+                        className="absolute -bottom-10 -left-10 w-24 h-24 rounded-full opacity-15"
+                        style={{ backgroundColor: step.color }}
+                      />
                     </div>
                     
-                    {/* Logo and heading with priority */}
-                    <div className="flex flex-col items-center mb-3">
-                      <div 
-                        className="flex items-center justify-center w-12 h-12 rounded-full mb-2 shadow-sm"
-                        style={{ backgroundColor: `${step.color}15` }}
+                    {/* Content */}
+                    <div className="relative z-10 flex flex-col items-center">
+                      {/* Icon */}
+                      <motion.div 
+                        className="flex items-center justify-center w-20 h-20 rounded-2xl mb-6 shadow-lg"
+                        style={{ backgroundColor: step.color }}
+                        whileHover={{ scale: 1.1, rotate: 5 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
                       >
-                        <div style={{ color: step.color }}>
+                        <div className="text-white text-2xl">
                           {step.icon}
                         </div>
-                      </div>
-                      <h3 className="text-lg font-bold text-black text-center">
+                      </motion.div>
+                      
+                      {/* Title */}
+                      <h3 className="text-2xl font-bold text-black mb-4 leading-tight">
                         {step.title}
                       </h3>
+                      
+                      {/* Description */}
+                      <p className="text-black/80 leading-relaxed text-base max-w-sm">
+                        {step.description}
+                      </p>
                     </div>
-                    
-                    {/* Description below */}
-                    <p className="text-sm text-black leading-relaxed text-center">
-                      {step.description}
-                    </p>
                   </motion.div>
                 </div>
               ))}
             </motion.div>
           </div>
 
-          {/* Carousel Indicators */}
-          <div className="flex justify-center mt-6 space-x-2">
-            {solutionSteps.map((_, index) => (
+          {/* Modern Carousel Indicators */}
+          <div className="flex justify-center mt-8 space-x-3">
+            {solutionSteps.map((step, index) => (
               <motion.button
                 key={index}
-                className={`h-2 rounded-full transition-all duration-300 ${index === activeStep ? 'w-6 bg-primary-600' : 'w-2 bg-neutral-300'}`}
+                className={`h-3 rounded-full transition-all duration-300 ${
+                  index === activeStep 
+                    ? 'w-8 shadow-lg' 
+                    : 'w-3 bg-neutral-400/60 hover:bg-neutral-400'
+                }`}
+                style={{
+                  backgroundColor: index === activeStep ? step.color : undefined
+                }}
                 onClick={() => {
                   if (autoScrollRef.current) {
                     clearInterval(autoScrollRef.current);
