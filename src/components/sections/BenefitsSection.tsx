@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import { AnimatedBenefitsList } from '../ui/AnimatedBenefitsList';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import expImage from '../../../assetpartners/exp.png';
 
 // CSS for network dots pattern
 const networkDotsStyle = {
@@ -202,7 +203,7 @@ export const BenefitsSection = () => {
                 />
                 <div className="w-80 h-80 mx-auto rounded-full overflow-hidden border-4 border-white shadow-xl transform hover:scale-110 transition-transform duration-500 hover:shadow-2xl">
                   <img 
-                    src="/assetpartners/exp.png"
+                    src={expImage}
                     alt="Doctor giving medical lecture at conference"
                     className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"
                   />

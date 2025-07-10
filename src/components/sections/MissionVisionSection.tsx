@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Target, Eye, Lightbulb, Compass, Clock, Users, Heart } from 'lucide-react';
+import eventsImage from '../../../assetpartners/events.png';
 
 interface ValueCardProps {
   icon: React.ReactNode;
@@ -160,7 +161,7 @@ personalized healthcare—to the global market. Focused on accessibility, precis
             >
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent z-10"></div>
               <img 
-                src="/assetpartners/events.png"
+                src={eventsImage}
                 alt="Healthcare professionals collaborating" 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
