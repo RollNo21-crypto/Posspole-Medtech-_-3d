@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import posspoleImage from '../../../assetpartners/posspole.png'
 import { 
   Heart, 
   Brain, 
@@ -271,14 +272,17 @@ export const SolutionsSection = () => {
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
-            className="relative w-48 h-48 rounded-full flex items-center justify-center bg-white border border-neutral-100 shadow-2xl text-black"
+            className="relative w-[340px] h-[340px] rounded-full flex items-center justify-center bg-white border border-neutral-100 shadow-2xl text-black"
           >
             <div className="absolute inset-0 rounded-full overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-primary-500/10 via-secondary-400/15 to-green-500/10"></div>
             </div>
             <div className="text-center">
-              <h3 className="text-xl font-bold text-black">Why Choose Us?</h3>
-              {/* <p className="text-sm text-black">INFOGRAPHIC</p> */}
+              <img 
+                src={posspoleImage} 
+                alt="Posspole Logo" 
+                className="w-96 h-96 mx-auto mb-2 object-cover"
+              />
             </div>
           </motion.div>
         </div>

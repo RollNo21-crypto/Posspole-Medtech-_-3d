@@ -1,7 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Send, CheckCircle2, AlertCircle, MapPin, Phone, Mail, Clock, ChevronLeft, ChevronRight } from 'lucide-react';
-
+import p1 from '../../../assetpartners/p1.jpeg';
+import p2 from '../../../assetpartners/p2.jpeg';
+import p3 from '../../../assetpartners/p3.jpeg';
+import p4 from '../../../assetpartners/p4.jpeg';
 // Office Photos Carousel Component
 const OfficePhotosCarousel: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -10,23 +13,23 @@ const OfficePhotosCarousel: React.FC = () => {
   // Office photos array
   const officePhotos = [
     {
-      url: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80",
+      url: p1,
       alt: "Modern office reception area"
     },
     {
-      url: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80",
+      url: p2,
       alt: "Collaborative workspace"
     },
     {
-      url: "https://images.unsplash.com/photo-1604328698692-f76ea9498e76?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      url: p3,
       alt: "Meeting room"
     },
     {
-      url: "https://images.unsplash.com/photo-1497215842964-222b430dc094?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+      url: p4,
       alt: "Office exterior"
     }
   ];
-  
+
   const totalPhotos = officePhotos.length;
   
   // Auto-scroll every 4 seconds
@@ -356,7 +359,7 @@ export const ContactSection = () => {
                     </button>
                   </motion.div>
                 ) : (
-                  <form action="https://formsubmit.co/krishnamurthym@posspole.com" method="POST" onSubmit={handleSubmit}>
+                  <form action="https://formsubmit.co/adi@posspole.com" method="POST" onSubmit={handleSubmit}>
                     {/* Hidden fields for formsubmit.co configuration */}
                     <input type="hidden" name="_captcha" value="false" />
                     <input type="hidden" name="_format" value="json" />
