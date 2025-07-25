@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Target, Eye, Lightbulb, Compass, Clock, Users, Heart } from 'lucide-react';
-import eventsImage from '../../../assetpartners/events.png';
+import eventsImage from '../../../assetpartners/Event1.jpeg';
 
 interface ValueCardProps {
   icon: React.ReactNode;
