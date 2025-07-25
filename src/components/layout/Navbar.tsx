@@ -47,7 +47,7 @@ export const Navbar = () => {
     <>
       {/* Header */}
       <motion.header
-        className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-[50] transition-all duration-300 ${
           isScrolled
             ? 'bg-white/90 backdrop-blur-md shadow-lg border-b border-neutral-200/50'
             : 'bg-transparent'
@@ -106,7 +106,7 @@ export const Navbar = () => {
             {/* Mobile Menu Button */}
             <motion.button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden text-neutral-900 z-[120] p-3 hover:bg-primary-500/20 rounded-xl transition-colors relative"
+              className="lg:hidden text-neutral-900 z-[60] p-3 hover:bg-primary-500/20 rounded-xl transition-colors relative"
               aria-label="Toggle menu"
               whileTap={{ scale: 0.9 }}
             >
@@ -128,7 +128,7 @@ export const Navbar = () => {
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ duration: 0.4 }}
-            className="fixed top-0 left-0 w-screen h-screen z-[999] bg-white overflow-y-auto px-6 py-6"
+            className="fixed top-0 left-0 w-screen h-screen z-[500] bg-white overflow-y-auto px-6 py-6"
           >
             {/* Close Button */}
             <div className="flex justify-end mb-6">

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Globe, X, ExternalLink } from 'lucide-react';
@@ -40,6 +40,24 @@ interface ProductModalProps {
 }
 
 const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose }) => {
+  useEffect(() => {
+    if (isOpen) {
+      // Disable body scroll when modal is open
+      document.body.style.overflow = 'hidden';
+      document.body.style.paddingRight = 'var(--scrollbar-width, 0px)';
+    } else {
+      // Re-enable body scroll when modal is closed
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
+    }
+
+    // Cleanup function to restore scroll on unmount
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.paddingRight = '';
+    };
+  }, [isOpen]);
+
   if (!product) return null;
 
   return (
@@ -51,7 +69,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50"
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[99999]"
             onClick={onClose}
           />
           
@@ -61,7 +79,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="fixed inset-4 md:inset-8 lg:inset-16 xl:inset-24 bg-white rounded-2xl shadow-2xl z-50 overflow-hidden"
+            className="fixed inset-4 md:inset-8 lg:inset-16 xl:inset-24 bg-white rounded-2xl shadow-2xl z-[100000] overflow-hidden"
           >
             {/* Close Button */}
             <button
@@ -81,6 +99,8 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
                       src={product.companyLogoImage} 
                       alt={product.companyLogo}
                       className="w-full h-full object-contain"
+                      loading="lazy"
+                      decoding="async"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
                         target.style.display = 'none';
@@ -119,6 +139,8 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
                         src={product.companyLogoImage} 
                         alt={product.companyLogo}
                         className="w-full h-full object-contain"
+                        loading="lazy"
+                        decoding="async"
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
                           target.style.display = 'none';
@@ -145,7 +167,8 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
 const ProductCard: React.FC<ProductCardProps> = ({ title, description, companyLogo, companyLogoImage, category, shortDescription, gradientColors, delay, onKnowMore }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
-    threshold: 0.1,
+    threshold: 0.05,
+    rootMargin: '50px',
   });
 
   return (
@@ -153,7 +176,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ title, description, companyLo
       ref={ref}
       initial={{ opacity: 0, y: 30 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-      transition={{ duration: 0.6, delay }}
+      transition={{ duration: 0.3, delay: delay * 0.05 }}
       className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100"
     >
       {/* Card Content */}
@@ -165,6 +188,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ title, description, companyLo
               src={companyLogoImage} 
               alt={companyLogo}
               className="w-full h-full object-contain"
+              loading="lazy"
+              decoding="async"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
                 target.style.display = 'none';
@@ -231,7 +256,7 @@ export const ServicesProductsSection = () => {
       category: "Medical Imaging",
       shortDescription: "Advanced cancer detection and precision removal technology",
       gradientColors: "linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)",
-      delay: 0.1,
+      delay: 1,
     },
     {
       title: "Cervical Cancer Screening Kit",
@@ -241,7 +266,7 @@ export const ServicesProductsSection = () => {
       category: "Cancer Screening",
       shortDescription: "Non-invasive cervical cancer screening technology",
       gradientColors: "linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)",
-      delay: 0.2,
+      delay: 2,
     },
     {
       title: "Human Token",
@@ -251,7 +276,7 @@ export const ServicesProductsSection = () => {
       category: "Genomic Analysis",
       shortDescription: "Personalized health insights through genomic analysis",
       gradientColors: "linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)",
-      delay: 0.3,
+      delay: 3,
     },
     {
       title: "AI Steth",
@@ -261,7 +286,7 @@ export const ServicesProductsSection = () => {
       category: "AI Diagnostics",
       shortDescription: "AI-powered smart stethoscope for enhanced diagnostics",
       gradientColors: "linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)",
-      delay: 0.4,
+      delay: 4,
     },
     {
       title: "MayaMD",
@@ -271,7 +296,7 @@ export const ServicesProductsSection = () => {
       category: "Digital Health",
       shortDescription: "AI-powered digital health assistant for streamlined care",
       gradientColors: "linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)",
-      delay: 0.5,
+      delay: 5,
     },
     {
       title: "Manentia.ai",
@@ -281,7 +306,7 @@ export const ServicesProductsSection = () => {
       category: "AI Imaging",
       shortDescription: "AI-powered imaging platform for critical condition detection",
       gradientColors: "linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)",
-      delay: 0.6,
+      delay: 6,
     },
     {
       title: "3D Bioprinting",
@@ -291,7 +316,7 @@ export const ServicesProductsSection = () => {
       category: "Bioprinting",
       shortDescription: "3D bioprinting technology for living tissue creation",
       gradientColors: "linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)",
-      delay: 0.7,
+      delay: 7,
     },
     {
       title: "AUM Voice Prosthesis",
@@ -301,7 +326,7 @@ export const ServicesProductsSection = () => {
       category: "Voice Restoration",
       shortDescription: "Innovative voice prosthesis for accessible restoration",
       gradientColors: "linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)",
-      delay: 0.8,
+      delay: 8,
     },
     {
       title: "Advanced Wheelchair",
@@ -311,7 +336,7 @@ export const ServicesProductsSection = () => {
       category: "Mobility Solutions",
       shortDescription: "Next-gen wheelchair with stair-climbing capabilities",
       gradientColors: "linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)",
-      delay: 0.9,
+      delay: 9,
     },
     {
       title: "CotWheel Chair",
@@ -321,7 +346,7 @@ export const ServicesProductsSection = () => {
       category: "Assistive Technology",
       shortDescription: "Remote-controlled wheelchair-to-cot transformation device",
       gradientColors: "linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)",
-      delay: 1.0,
+      delay: 10,
     },
     {
       title: "Ventlyff",
@@ -331,7 +356,7 @@ export const ServicesProductsSection = () => {
       category: "Critical Care",
       shortDescription: "AI-powered ventilator for personalized respiratory support",
       gradientColors: "linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)",
-      delay: 1.1,
+      delay: 11,
     },
     {
       title: "Longevity",
@@ -341,7 +366,7 @@ export const ServicesProductsSection = () => {
       category: "Longevity & Wellness",
       shortDescription: "Personalized health supplements for longevity and vitality",
       gradientColors: "linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)",
-      delay: 1.2,
+      delay: 12,
     },
   ];
 
