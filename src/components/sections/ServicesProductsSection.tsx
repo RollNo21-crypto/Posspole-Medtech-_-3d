@@ -69,7 +69,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[99999]"
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[999999]"
             onClick={onClose}
           />
           
@@ -79,7 +79,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="fixed inset-4 md:inset-8 lg:inset-16 xl:inset-24 bg-white rounded-2xl shadow-2xl z-[100000] overflow-hidden"
+            className="fixed inset-4 md:inset-8 lg:inset-16 xl:inset-24 bg-white rounded-2xl shadow-2xl z-[1000000] overflow-hidden"
           >
             {/* Close Button */}
             <button
@@ -426,13 +426,15 @@ export const ServicesProductsSection = () => {
           ))}
         </div>
         
-        {/* Modal */}
-        <ProductModal
-          product={selectedProduct}
-          isOpen={isModalOpen}
-          onClose={closeModal}
-        />
+        {/* Modal - Moved outside container */}
       </div>
+      
+      {/* Modal - Rendered outside section container */}
+      <ProductModal
+        product={selectedProduct}
+        isOpen={isModalOpen}
+        onClose={closeModal}
+      />
     </section>
   );
 };
