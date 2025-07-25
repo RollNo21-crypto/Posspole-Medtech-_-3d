@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Globe } from 'lucide-react';
+import { Globe, X, ExternalLink } from 'lucide-react';
 
 // Import company logos
 import navigationScienceLogo from '/assets/navigation science.png';
@@ -23,10 +23,126 @@ interface ProductCardProps {
   shortDescription: string;
   gradientColors: string;
   delay: number;
+  onKnowMore: () => void;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ title, description, companyLogo, companyLogoImage, category, shortDescription, gradientColors, delay }) => {
-  const [isFlipped, setIsFlipped] = useState(false);
+interface ProductModalProps {
+  product: {
+    title: string;
+    description: string;
+    companyLogo: string;
+    companyLogoImage: string;
+    category: string;
+    shortDescription: string;
+  } | null;
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose }) => {
+  if (!product) return null;
+
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <>
+          {/* Backdrop */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50"
+            onClick={onClose}
+          />
+          
+          {/* Modal */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+            transition={{ type: "spring", damping: 25, stiffness: 300 }}
+            className="fixed inset-4 md:inset-8 lg:inset-16 xl:inset-24 bg-white rounded-2xl shadow-2xl z-50 overflow-hidden"
+          >
+            {/* Close Button */}
+            <button
+              onClick={onClose}
+              className="absolute top-4 right-4 z-10 w-10 h-10 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition-colors"
+            >
+              <X className="w-5 h-5 text-gray-600" />
+            </button>
+            
+            {/* Modal Content */}
+            <div className="h-full overflow-y-auto">
+              {/* Header */}
+              <div className="bg-gradient-to-r from-purple-600 to-indigo-600 p-6 md:p-8">
+                <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
+                  <div className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-2xl flex items-center justify-center p-3 shadow-lg">
+                    <img 
+                      src={product.companyLogoImage} 
+                      alt={product.companyLogo}
+                      className="w-full h-full object-contain"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = 'none';
+                        target.nextElementSibling?.classList.remove('hidden');
+                      }}
+                    />
+                    <Globe className="w-10 h-10 text-gray-600 hidden" />
+                  </div>
+                  <div className="flex-1">
+                    <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">{product.title}</h2>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-3 py-1 bg-white/20 text-white text-sm rounded-full">{product.companyLogo}</span>
+                      <span className="px-3 py-1 bg-white/20 text-white text-sm rounded-full">{product.category}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Body */}
+              <div className="p-6 md:p-8">
+                <div className="mb-6">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Overview</h3>
+                  <p className="text-gray-700 leading-relaxed">{product.shortDescription}</p>
+                </div>
+                
+                <div className="mb-6">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Detailed Description</h3>
+                  <p className="text-gray-700 leading-relaxed">{product.description}</p>
+                </div>
+                
+                <div className="bg-gray-50 rounded-xl p-6">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Company Information</h3>
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center p-2 shadow-sm">
+                      <img 
+                        src={product.companyLogoImage} 
+                        alt={product.companyLogo}
+                        className="w-full h-full object-contain"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          target.nextElementSibling?.classList.remove('hidden');
+                        }}
+                      />
+                      <Globe className="w-6 h-6 text-gray-600 hidden" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900">{product.companyLogo}</p>
+                      <p className="text-sm text-gray-600">{product.category}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </>
+      )}
+    </AnimatePresence>
+  );
+};
+
+const ProductCard: React.FC<ProductCardProps> = ({ title, description, companyLogo, companyLogoImage, category, shortDescription, gradientColors, delay, onKnowMore }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -38,92 +154,74 @@ const ProductCard: React.FC<ProductCardProps> = ({ title, description, companyLo
       initial={{ opacity: 0, y: 30 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
       transition={{ duration: 0.6, delay }}
-      className="group relative h-80 w-full cursor-pointer perspective-1000"
-      onMouseEnter={() => setIsFlipped(true)}
-      onMouseLeave={() => setIsFlipped(false)}
+      className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100"
     >
-      <div 
-        className={`relative h-full w-full transition-transform duration-700 transform-style-preserve-3d ${
-          isFlipped ? 'rotate-y-180' : ''
-        }`}
-      >
-        {/* Front Side - Gradient Background */}
-        <div className="absolute inset-0 w-full h-full backface-hidden">
-          <div className="relative h-full w-full overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300" style={{ background: gradientColors }}>
-            <div className="absolute top-4 left-4">
-              <div className="w-28 h-28 bg-white/95 backdrop-blur-sm rounded-2xl flex items-center justify-center p-2 shadow-xl border border-white/30 mb-4">
-                <img 
-                  src={companyLogoImage} 
-                  alt={companyLogo}
-                  className="w-full h-full object-contain"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.style.display = 'none';
-                    target.nextElementSibling?.classList.remove('hidden');
-                  }}
-                />
-                <Globe className="w-16 h-16 text-gray-600 hidden" />
-              </div>
-              <div className="text-left max-w-xs">
-                <h4 className="text-xl font-black text-white/100 mb-2 tracking-wide">{companyLogo}</h4>
-                <p className="text-sm text-white/95 italic mb-2">{category}</p>
-                <p className="text-xs text-white/85 leading-relaxed">{shortDescription}</p>
-              </div>
-            </div>
-            <div className="absolute bottom-4 left-4 right-4 text-white">
-              {/* <h3 className="text-xl font-bold mb-2">{title}</h3> */}
-            </div>
+      {/* Card Content */}
+      <div className="p-6 text-center">
+        {/* Logo - Centered */}
+        <div className="flex justify-center mb-4">
+          <div className="w-20 h-20 md:w-24 md:h-24 flex items-center justify-center">
+            <img 
+              src={companyLogoImage} 
+              alt={companyLogo}
+              className="w-full h-full object-contain"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.style.display = 'none';
+                target.nextElementSibling?.classList.remove('hidden');
+              }}
+            />
+            <Globe className="w-12 h-12 text-purple-600 hidden" />
           </div>
         </div>
-
-        {/* Back Side - Company Details */}
-         <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180">
-            <div className="h-full w-full rounded-xl bg-gradient-to-br from-white via-gray-50 to-white p-6 shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-500 flex flex-col backdrop-blur-sm">
-               {/* Logo at top left and company name at top right */}
-               <div className="flex items-start justify-between mb-4">
-                 <div className="w-14 h-14 bg-white rounded-xl shadow-md border border-gray-100 flex items-center justify-center p-2 overflow-hidden">
-                   <img 
-                     src={companyLogoImage} 
-                     alt={companyLogo}
-                     className="w-full h-full object-contain"
-                     onError={(e) => {
-                       const target = e.target as HTMLImageElement;
-                       target.style.display = 'none';
-                       target.nextElementSibling?.classList.remove('hidden');
-                     }}
-                   />
-                   <Globe className="w-8 h-8 text-blue-600 hidden" />
-                 </div>
-                 <div className="inline-block px-4 py-2 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 text-blue-800 text-sm font-semibold rounded-xl shadow-sm">
-                   {companyLogo}
-                 </div>
-               </div>
-              
-              {/* Spacing */}
-              <div className="mb-4"></div>
-              
-              {/* Title */}
-              <h4 className="text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent mb-4 leading-tight">
-                {title}
-              </h4>
-              
-              {/* Spacing */}
-              <div className="mb-3"></div>
-              
-              {/* Description */}
-              <p className="text-gray-700 text-sm leading-relaxed flex-grow font-medium">
-                {description}
-              </p>
-              
-
-            </div>
-          </div>
+        
+        {/* Company Name - Below Logo */}
+        <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">{companyLogo}</h3>
+        
+        {/* Category */}
+        <span className="inline-block px-3 py-1 bg-purple-100 text-purple-700 text-sm font-medium rounded-full mb-4">
+          {category}
+        </span>
+        
+        {/* Short Description */}
+        <p className="text-gray-600 text-sm leading-relaxed mb-6 line-clamp-3">
+          {shortDescription}
+        </p>
+        
+        {/* Know More Button */}
+        <button
+          onClick={onKnowMore}
+          className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 group"
+        >
+          Know More
+          <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        </button>
       </div>
     </motion.div>
   );
 };
 
 export const ServicesProductsSection = () => {
+  const [selectedProduct, setSelectedProduct] = useState<{
+    title: string;
+    description: string;
+    companyLogo: string;
+    companyLogoImage: string;
+    category: string;
+    shortDescription: string;
+  } | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleKnowMore = (product: any) => {
+    setSelectedProduct(product);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedProduct(null);
+  };
+
   const products = [
     {
       title: "Navigation and Imaging of Cancer",
@@ -138,7 +236,7 @@ export const ServicesProductsSection = () => {
     {
       title: "Cervical Cancer Screening Kit",
       description: "In collaboration with IOTA,  POSSPOLE is advancing MStrip—a non-invasive cervical cancer screening strip attached to sanitary napkins—expanding access through medical networks and digital outreach.",
-      companyLogo: "POSSPOLE",
+      companyLogo: "POSSPOLE MedTech",
       companyLogoImage: posspoleLogo,
       category: "Cancer Screening",
       shortDescription: "Non-invasive cervical cancer screening technology",
@@ -188,7 +286,7 @@ export const ServicesProductsSection = () => {
     {
       title: "3D Bioprinting",
       description: "POSSPOLE is advancing 3D bioprinting technology that creates living tissues for drug testing, personalized medicine, and future organ transplantation.",
-      companyLogo: "PossPole",
+      companyLogo: "POSSPOLE MedTech",
       companyLogoImage: posspoleLogo,
       category: "Bioprinting",
       shortDescription: "3D bioprinting technology for living tissue creation",
@@ -218,7 +316,7 @@ export const ServicesProductsSection = () => {
     {
       title: "CotWheel Chair",
       description: "The Cotwheel Chair is a remote-controlled wheelchair-to-cot device that enhances comfort and independence for individuals with limited mobility in care or home settings.",
-      companyLogo: "PossPole",
+      companyLogo: "POSSPOLE MedTech",
       companyLogoImage: posspoleLogo,
       category: "Assistive Technology",
       shortDescription: "Remote-controlled wheelchair-to-cot transformation device",
@@ -228,7 +326,7 @@ export const ServicesProductsSection = () => {
     {
       title: "Ventlyff",
       description: "Ventlyff is an AI-powered ventilator that personalizes respiratory support in real time, optimizing critical care for ICU and emergency patients.",
-      companyLogo: "PossPole",
+      companyLogo: "POSSPOLE MedTech",
       companyLogoImage: posspoleLogo,
       category: "Critical Care",
       shortDescription: "AI-powered ventilator for personalized respiratory support",
@@ -286,11 +384,11 @@ export const ServicesProductsSection = () => {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
           {products.map((product, index) => (
             <ProductCard
               key={index}
-              title={product.title.toUpperCase()}
+              title={product.title}
               description={product.description}
               companyLogo={product.companyLogo}
               companyLogoImage={product.companyLogoImage}
@@ -298,9 +396,17 @@ export const ServicesProductsSection = () => {
               shortDescription={product.shortDescription}
               gradientColors={product.gradientColors}
               delay={product.delay}
+              onKnowMore={() => handleKnowMore(product)}
             />
           ))}
         </div>
+        
+        {/* Modal */}
+        <ProductModal
+          product={selectedProduct}
+          isOpen={isModalOpen}
+          onClose={closeModal}
+        />
       </div>
     </section>
   );
