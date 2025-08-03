@@ -1,7 +1,7 @@
 {
   "name": "POSSPOLE MEDTECH - Revolutionizing Healthcare Technology",
   "short_name": "POSSPOLE MEDTECH",
-  "description": "POSSPOLE MEDTECH is pioneering cutting-edge healthcare technologies to create a unified vision for global health, bringing together science, data, and human expertise.",
+  "description": "POSSPOLE MEDTECH is pioneering cutting-edge healthcare technologies to create a unified vision for global health, bringing together science, data, and human expertise. Leading provider of AI healthcare, digital health solutions, and medical innovation.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -9,7 +9,8 @@
   "orientation": "portrait-primary",
   "scope": "/",
   "lang": "en",
-  "categories": ["health", "medical", "technology", "business"],
+  "categories": ["health", "medical", "technology", "business", "healthcare", "innovation", "artificial-intelligence", "digital-health"],
+  "keywords": ["posspole", "posspolemedtech", "POSSPOLE MEDTECH", "healthcare technology", "medical innovation", "AI healthcare", "digital health", "telemedicine", "medical devices", "health tech", "medtech", "healthcare solutions", "medical AI", "health innovation"],
   "icons": [
     {
       "src": "/assets/posspole.png",

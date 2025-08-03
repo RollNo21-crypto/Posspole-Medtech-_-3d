@@ -1,16 +1,62 @@
+# POSSPOLE MEDTECH - Subdomain Authority Optimization
+# Domain: medtech.posspole.com
+# Last Updated: 2024
+
+# Primary crawlers - aggressive indexing for subdomain authority
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /*.xml$
+Allow: /sitemap.xml
+Allow: /robots.txt
+Allow: /manifest.json
+Allow: /.htaccess
+Crawl-delay: 0.5
+
+User-agent: Bingbot
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /private/
+Crawl-delay: 0.5
+
+User-agent: Slurp
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Crawl-delay: 1
+
+# All other crawlers
 User-agent: *
 Allow: /
-
-# Disallow crawling of admin or private areas (if any)
-# Disallow: /admin/
-# Disallow: /private/
-
-# Allow crawling of assets
-Allow: /assets/
-Allow: /public/
-
-# Sitemap location
-Sitemap: https://medtech.posspole.com/sitemap.xml
-
-# Crawl delay (optional, helps prevent server overload)
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /private/
+Disallow: /*.json$
+Disallow: /*.xml$
+Allow: /sitemap.xml
+Allow: /robots.txt
 Crawl-delay: 1
+
+# Subdomain-specific sitemap declarations
+Sitemap: https://medtech.posspole.com/sitemap-index.xml
+Sitemap: https://medtech.posspole.com/sitemap.xml
+Sitemap: https://medtech.posspole.com/sitemap-services.xml
+
+# Future sitemaps for enhanced indexing
+# Sitemap: https://medtech.posspole.com/sitemap-images.xml
+# Sitemap: https://medtech.posspole.com/sitemap-news.xml
+# Sitemap: https://medtech.posspole.com/sitemap-products.xml
+# Sitemap: https://medtech.posspole.com/sitemap-blog.xml
+
+# Clean URLs directive
+Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content
+
+# Host directive for subdomain authority
+Host: medtech.posspole.com

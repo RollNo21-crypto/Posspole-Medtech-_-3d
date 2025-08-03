@@ -1,0 +1,39 @@
+# POSSPOLE MEDTECH Security Policy
+# Domain: medtech.posspole.com
+# Last Updated: 2024-01-01
+
+Contact: security@posspole.com
+Contact: https://medtech.posspole.com/security-contact
+Expires: 2025-12-31T23:59:59.000Z
+Encryption: https://medtech.posspole.com/pgp-key.txt
+Acknowledgments: https://medtech.posspole.com/security-acknowledgments
+Preferred-Languages: en, hi
+Canonical: https://medtech.posspole.com/.well-known/security.txt
+Policy: https://medtech.posspole.com/security-policy
+Hiring: https://medtech.posspole.com/careers/security
+
+# Additional Information
+# We take security seriously at POSSPOLE MEDTECH
+# Healthcare data protection is our top priority
+# HIPAA compliant security measures implemented
+# Regular security audits and penetration testing
+# 24/7 security monitoring and incident response
+
+# Scope
+# This policy applies to:
+# - medtech.posspole.com (primary subdomain)
+# - All POSSPOLE MEDTECH healthcare applications
+# - API endpoints and services
+# - Mobile applications and integrations
+
+# Out of Scope
+# - Third-party integrations (unless directly managed)
+# - Social engineering attacks
+# - Physical security issues
+# - Denial of service attacks
+
+# Responsible Disclosure
+# Please allow up to 90 days for resolution
+# We commit to acknowledging reports within 48 hours
+# Security researchers will be credited appropriately
+# Legal safe harbor for good faith security research

@@ -1,0 +1,53 @@
+# POSSPOLE MEDTECH Authorized Digital Sellers
+# Domain: medtech.posspole.com
+# Last Updated: 2024-01-01
+# Contact: advertising@posspole.com
+
+# Google AdSense
+# google.com, pub-XXXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+
+# Google Ad Manager
+# google.com, pub-XXXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+
+# Healthcare Advertising Networks (Examples)
+# Replace with actual publisher IDs when implementing
+
+# Medical Marketing Networks
+# medicalmarketing.com, XXXXXXXXX, DIRECT
+# healthcareadnetwork.com, XXXXXXXXX, DIRECT
+# pharmaads.com, XXXXXXXXX, DIRECT
+
+# General Advertising Networks
+# Replace with actual authorized sellers
+
+# Amazon Publisher Services
+# aps.amazon.com, XXXXXXXXX, DIRECT
+
+# Microsoft Advertising
+# msn.com, XXXXXXXXX, DIRECT
+
+# Facebook Audience Network
+# facebook.com, XXXXXXXXX, DIRECT
+
+# Twitter Ads
+# twitter.com, XXXXXXXXX, DIRECT
+
+# LinkedIn Marketing Solutions
+# linkedin.com, XXXXXXXXX, DIRECT
+
+# Healthcare-specific ad networks
+# Only include networks that comply with healthcare advertising regulations
+# and HIPAA requirements for healthcare technology companies
+
+# Note: This file helps establish advertising authority and prevents
+# unauthorized monetization of the POSSPOLE MEDTECH brand
+# All entries should be verified and authorized by POSSPOLE MEDTECH
+
+# For healthcare companies, ensure all advertising partners comply with:
+# - HIPAA regulations
+# - Healthcare advertising guidelines
+# - Medical device advertising regulations
+# - Patient privacy requirements
+
+# Contact advertising@posspole.com for authorized seller inquiries
+# Unauthorized use of POSSPOLE MEDTECH brand in advertising is prohibited

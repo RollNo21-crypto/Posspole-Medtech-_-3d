@@ -101,6 +101,108 @@ export const seoConfig = {
       description: 'Healthcare technology company specializing in innovative medical solutions',
       medicalSpecialty: 'Healthcare Technology',
     },
+    service: {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: 'Healthcare Technology Solutions',
+      provider: {
+        '@type': 'Organization',
+        name: 'POSSPOLE MEDTECH',
+      },
+      description: 'Comprehensive healthcare technology solutions including AI healthcare, digital health, and medical innovation services',
+      serviceType: 'Healthcare Technology',
+      areaServed: 'Global',
+    },
+    faqPage: {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'What is POSSPOLE MEDTECH?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'POSSPOLE MEDTECH is a pioneering healthcare technology company that creates cutting-edge solutions to transform global health through science, data, and human expertise.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'What services does POSSPOLE MEDTECH offer?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'We offer comprehensive healthcare technology solutions including AI healthcare systems, digital health platforms, medical device innovation, and telemedicine solutions.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Why choose POSSPOLE MEDTECH for healthcare technology?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'POSSPOLE MEDTECH combines cutting-edge AI technology with deep healthcare expertise to deliver innovative solutions that improve patient outcomes and streamline medical processes.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'How does POSSPOLE MEDTECH ensure data security in healthcare?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'We implement enterprise-grade security measures, HIPAA compliance, and advanced encryption to protect sensitive healthcare data while maintaining seamless user experience.',
+          },
+        },
+      ],
+    },
+    localBusiness: {
+      '@context': 'https://schema.org',
+      '@type': 'LocalBusiness',
+      '@id': 'https://medtech.posspole.com/#organization',
+      name: 'POSSPOLE MEDTECH',
+      image: 'https://medtech.posspole.com/assets/posspole.png',
+      url: 'https://medtech.posspole.com',
+      telephone: '+91-XXXXXXXXXX',
+      address: {
+        '@type': 'PostalAddress',
+        addressCountry: 'IN',
+        addressRegion: 'India',
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: 20.5937,
+        longitude: 78.9629,
+      },
+      openingHoursSpecification: {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '09:00',
+        closes: '18:00',
+      },
+      sameAs: [
+        'https://medtech.posspole.com',
+      ],
+    },
+    breadcrumbList: {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'POSSPOLE MEDTECH',
+          item: 'https://medtech.posspole.com',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Healthcare Technology Solutions',
+          item: 'https://medtech.posspole.com/#solutions',
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: 'Medical Innovation Services',
+          item: 'https://medtech.posspole.com/#services',
+        },
+      ],
+    },
   },
   
   // Open Graph defaults
@@ -116,7 +218,7 @@ export const seoConfig = {
     site: '@posspolemedtech', // Update when available
   },
   
-  // Additional meta tags
+  // Additional meta tags for subdomain authority
   additionalMetaTags: [
     {
       name: 'application-name',
@@ -145,6 +247,79 @@ export const seoConfig = {
     {
       name: 'theme-color',
       content: '#4f46e5',
+    },
+    {
+      name: 'publisher',
+      content: 'POSSPOLE MEDTECH',
+    },
+    {
+      name: 'copyright',
+      content: '© 2024 POSSPOLE MEDTECH. All rights reserved.',
+    },
+    {
+      name: 'rating',
+      content: 'general',
+    },
+    {
+      name: 'distribution',
+      content: 'global',
+    },
+    {
+      name: 'revisit-after',
+      content: '7 days',
+    },
+    {
+      name: 'geo.region',
+      content: 'IN',
+    },
+    {
+      name: 'geo.country',
+      content: 'India',
+    },
+    {
+      name: 'ICBM',
+      content: '20.5937,78.9629',
+    },
+    // Subdomain-specific authority signals
+    {
+      name: 'subdomain-authority',
+      content: 'medtech.posspole.com',
+    },
+    {
+      name: 'domain-verification',
+      content: 'posspole-medtech-subdomain-2024',
+    },
+    {
+      name: 'content-language',
+      content: 'en-US',
+    },
+    {
+      name: 'audience',
+      content: 'healthcare professionals, medical technology companies, healthcare innovators',
+    },
+    {
+      name: 'category',
+      content: 'Healthcare Technology',
+    },
+    {
+      name: 'classification',
+      content: 'Medical Technology, Healthcare Innovation, AI Healthcare',
+    },
+    {
+      name: 'coverage',
+      content: 'Worldwide',
+    },
+    {
+      name: 'target',
+      content: 'healthcare technology professionals',
+    },
+    {
+      name: 'HandheldFriendly',
+      content: 'True',
+    },
+    {
+      name: 'MobileOptimized',
+      content: '320',
     },
   ],
 };
