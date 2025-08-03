@@ -6,7 +6,7 @@ export const seoConfig = {
   siteUrl: 'https://medtech.posspole.com',
   defaultTitle: 'POSSPOLE MEDTECH - Revolutionizing Healthcare Technology',
   defaultDescription: 'POSSPOLE MEDTECH is pioneering cutting-edge healthcare technologies to create a unified vision for global health, bringing together science, data, and human expertise.',
-  defaultKeywords: 'posspole, posspolemedtech, POSSPOLE MEDTECH, posspole medtech, posspole healthcare, healthcare technology, medical innovation, AI healthcare, digital health, medical devices, healthcare solutions, telemedicine, health tech, medical AI, healthcare analytics',
+  defaultKeywords: 'posspole, posspolemedtech, POSSPOLE MEDTECH, posspole medtech, posspole medicine, posspole hospital, posspole onehealth, onehealth, medtech AI, posspole bengaluru, posspole startup, posspole people, posspole healthcare, healthcare technology, medical innovation, AI healthcare, digital health, medical devices, healthcare solutions, telemedicine, health tech, medical AI, healthcare analytics, bangalore healthcare, bengaluru medtech, indian healthcare startup, one health solutions, integrated healthcare',
   defaultImage: '/assets/posspole.png',
   twitterHandle: '@posspolemedtech', // Update when available
   
@@ -26,7 +26,7 @@ export const seoConfig = {
     home: {
       title: 'POSSPOLE MEDTECH - Revolutionizing Healthcare Technology',
       description: 'POSSPOLE MEDTECH is pioneering cutting-edge healthcare technologies to create a unified vision for global health, bringing together science, data, and human expertise.',
-      keywords: 'posspole, posspolemedtech, POSSPOLE MEDTECH, posspole medtech, posspole healthcare, healthcare technology, medical innovation, AI healthcare, digital health, medical devices, healthcare solutions, telemedicine, health tech, medical AI, healthcare analytics',
+      keywords: 'posspole, posspolemedtech, POSSPOLE MEDTECH, posspole medtech, posspole medicine, posspole hospital, posspole onehealth, onehealth, medtech AI, posspole bengaluru, posspole startup, posspole people, posspole healthcare, healthcare technology, medical innovation, AI healthcare, digital health, medical devices, healthcare solutions, telemedicine, health tech, medical AI, healthcare analytics, bangalore healthcare, bengaluru medtech, indian healthcare startup, one health solutions, integrated healthcare',
       path: '/',
     },
     solutions: {
