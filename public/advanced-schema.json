@@ -1,0 +1,210 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Product",
+      "@id": "https://medtech.posspole.com/#ai-healthcare-platform",
+      "name": "POSSPOLE AI Healthcare Platform",
+      "description": "Revolutionary AI-powered healthcare platform that transforms medical diagnosis, patient care, and clinical decision-making through advanced machine learning algorithms.",
+      "brand": {
+        "@type": "Brand",
+        "name": "POSSPOLE MEDTECH"
+      },
+      "manufacturer": {
+        "@id": "https://medtech.posspole.com/#organization"
+      },
+      "category": "Healthcare Technology Software",
+      "offers": {
+        "@type": "Offer",
+        "price": "Contact for Pricing",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@id": "https://medtech.posspole.com/#organization"
+        }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "127"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Dr. Sarah Johnson"
+          },
+          "reviewBody": "POSSPOLE MEDTECH's AI platform has revolutionized our clinical workflow. The diagnostic accuracy and patient management features are exceptional."
+        },
+        {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Dr. Michael Chen"
+          },
+          "reviewBody": "Outstanding healthcare technology solution. The AI-driven insights have significantly improved our patient outcomes and operational efficiency."
+        }
+      ]
+    },
+    {
+      "@type": "Product",
+      "@id": "https://medtech.posspole.com/#digital-health-suite",
+      "name": "POSSPOLE Digital Health Suite",
+      "description": "Comprehensive digital health platform offering telemedicine, patient monitoring, electronic health records, and healthcare analytics in one integrated solution.",
+      "brand": {
+        "@type": "Brand",
+        "name": "POSSPOLE MEDTECH"
+      },
+      "manufacturer": {
+        "@id": "https://medtech.posspole.com/#organization"
+      },
+      "category": "Digital Health Platform",
+      "offers": {
+        "@type": "Offer",
+        "price": "Contact for Pricing",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@id": "https://medtech.posspole.com/#organization"
+        }
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "89"
+      }
+    },
+    {
+      "@type": "Event",
+      "@id": "https://medtech.posspole.com/#healthcare-innovation-summit",
+      "name": "POSSPOLE Healthcare Innovation Summit 2024",
+      "description": "Join leading healthcare professionals and technology experts at the premier healthcare innovation event featuring AI in medicine, digital health trends, and future of healthcare technology.",
+      "startDate": "2024-06-15T09:00:00+05:30",
+      "endDate": "2024-06-16T18:00:00+05:30",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "POSSPOLE MEDTECH Innovation Center",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "IN",
+          "addressRegion": "India"
+        }
+      },
+      "organizer": {
+        "@id": "https://medtech.posspole.com/#organization"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://medtech.posspole.com/#contact"
+      }
+    },
+    {
+      "@type": "Course",
+      "@id": "https://medtech.posspole.com/#ai-healthcare-certification",
+      "name": "AI in Healthcare Certification Program",
+      "description": "Comprehensive certification program covering artificial intelligence applications in healthcare, machine learning for medical diagnosis, and digital health implementation.",
+      "provider": {
+        "@id": "https://medtech.posspole.com/#organization"
+      },
+      "courseMode": "online",
+      "educationalLevel": "Professional",
+      "timeRequired": "P8W",
+      "offers": {
+        "@type": "Offer",
+        "price": "Contact for Pricing",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "156"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://medtech.posspole.com/#mobile-health-app",
+      "name": "POSSPOLE Health Mobile App",
+      "description": "Advanced mobile health application for patient monitoring, telemedicine consultations, health tracking, and secure communication with healthcare providers.",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "iOS, Android",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.7",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "2341"
+      },
+      "author": {
+        "@id": "https://medtech.posspole.com/#organization"
+      }
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://medtech.posspole.com/#demo-video",
+      "name": "POSSPOLE MEDTECH Platform Demo",
+      "description": "Comprehensive demonstration of POSSPOLE MEDTECH's AI-powered healthcare platform showcasing key features and benefits for healthcare providers.",
+      "thumbnailUrl": "https://medtech.posspole.com/assets/video-thumbnail.jpg",
+      "uploadDate": "2024-01-15",
+      "duration": "PT5M30S",
+      "contentUrl": "https://medtech.posspole.com/demo-video",
+      "embedUrl": "https://medtech.posspole.com/embed/demo-video",
+      "publisher": {
+        "@id": "https://medtech.posspole.com/#organization"
+      }
+    },
+    {
+      "@type": "Article",
+      "@id": "https://medtech.posspole.com/#ai-healthcare-future",
+      "headline": "The Future of AI in Healthcare: Transforming Patient Care",
+      "description": "Explore how artificial intelligence is revolutionizing healthcare delivery, improving diagnostic accuracy, and enhancing patient outcomes through innovative technology solutions.",
+      "author": {
+        "@type": "Person",
+        "name": "POSSPOLE MEDTECH Research Team"
+      },
+      "publisher": {
+        "@id": "https://medtech.posspole.com/#organization"
+      },
+      "datePublished": "2024-01-01",
+      "dateModified": "2024-01-15",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://medtech.posspole.com/"
+      },
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://medtech.posspole.com/assets/ai-healthcare-future.jpg",
+        "width": 1200,
+        "height": 630
+      },
+      "keywords": "AI healthcare, artificial intelligence medicine, digital health, medical AI, healthcare technology, patient care innovation"
+    }
+  ]
+}

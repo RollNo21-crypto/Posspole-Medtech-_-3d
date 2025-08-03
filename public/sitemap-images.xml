@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage Images -->
+  <url>
+    <loc>https://medtech.posspole.com/</loc>
+    <image:image>
+      <image:loc>https://medtech.posspole.com/assets/posspole.png</image:loc>
+      <image:title>POSSPOLE MEDTECH Logo - Healthcare Technology Innovation</image:title>
+      <image:caption>Official logo of POSSPOLE MEDTECH, leading healthcare technology company specializing in AI-powered medical solutions</image:caption>
+      <image:geo_location>India</image:geo_location>
+      <image:license>https://medtech.posspole.com/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://medtech.posspole.com/assets/posspolelogbg.png</image:loc>
+      <image:title>POSSPOLE MEDTECH Brand Logo with Background</image:title>
+      <image:caption>POSSPOLE MEDTECH branded logo with professional healthcare technology background design</image:caption>
+      <image:geo_location>India</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://medtech.posspole.com/assets/aisteth.png</image:loc>
+      <image:title>AI Stethoscope - Smart Medical Device</image:title>
+      <image:caption>Advanced AI-powered stethoscope representing POSSPOLE MEDTECH's innovative medical device technology</image:caption>
+      <image:geo_location>India</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://medtech.posspole.com/assets/mayamd.png</image:loc>
+      <image:title>Maya MD - AI Medical Diagnosis Platform</image:title>
+      <image:caption>Maya MD artificial intelligence platform for enhanced medical diagnosis and patient care</image:caption>
+      <image:geo_location>India</image:geo_location>
+    </image:image>
+  </url>
+  
+  <!-- Partners Section Images -->
+  <url>
+    <loc>https://medtech.posspole.com/#partners</loc>
+    <image:image>
+      <image:loc>https://medtech.posspole.com/assetpartners/1.png</image:loc>
+      <image:title>Healthcare Technology Partner 1</image:title>
+      <image:caption>Strategic healthcare technology partner collaborating with POSSPOLE MEDTECH for medical innovation</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://medtech.posspole.com/assetpartners/2.png</image:loc>
+      <image:title>Healthcare Technology Partner 2</image:title>
+      <image:caption>Leading medical technology partner working with POSSPOLE MEDTECH on healthcare solutions</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://medtech.posspole.com/assetpartners/3.png</image:loc>
+      <image:title>Healthcare Technology Partner 3</image:title>
+      <image:caption>Innovative healthcare partner supporting POSSPOLE MEDTECH's mission in medical technology</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://medtech.posspole.com/assetpartners/4.png</image:loc>
+      <image:title>Healthcare Technology Partner 4</image:title>
+      <image:caption>Trusted medical technology partner collaborating on advanced healthcare solutions</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://medtech.posspole.com/assetpartners/5.png</image:loc>
+      <image:title>Healthcare Technology Partner 5</image:title>
+      <image:caption>Strategic healthcare innovation partner working with POSSPOLE MEDTECH</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://medtech.posspole.com/assetpartners/6.png</image:loc>
+      <image:title>Healthcare Technology Partner 6</image:title>
+      <image:caption>Leading medical technology partner in POSSPOLE MEDTECH's healthcare ecosystem</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://medtech.posspole.com/assetpartners/7.png</image:loc>
+      <image:title>Healthcare Technology Partner 7</image:title>
+      <image:caption>Innovative healthcare partner supporting advanced medical technology development</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://medtech.posspole.com/assetpartners/8.png</image:loc>
+      <image:title>Healthcare Technology Partner 8</image:title>
+      <image:caption>Trusted medical innovation partner collaborating on healthcare solutions</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://medtech.posspole.com/assetpartners/9.png</image:loc>
+      <image:title>Healthcare Technology Partner 9</image:title>
+      <image:caption>Strategic healthcare technology partner in POSSPOLE MEDTECH's network</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://medtech.posspole.com/assetpartners/10.png</image:loc>
+      <image:title>Healthcare Technology Partner 10</image:title>
+      <image:caption>Leading medical technology partner supporting healthcare innovation</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://medtech.posspole.com/assetpartners/11.png</image:loc>
+      <image:title>Healthcare Technology Partner 11</image:title>
+      <image:caption>Innovative healthcare partner in POSSPOLE MEDTECH's collaboration network</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://medtech.posspole.com/assetpartners/12.png</image:loc>
+      <image:title>Healthcare Technology Partner 12</image:title>
+      <image:caption>Trusted medical technology partner working on advanced healthcare solutions</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://medtech.posspole.com/assetpartners/13.png</image:loc>
+      <image:title>Healthcare Technology Partner 13</image:title>
+      <image:caption>Strategic healthcare innovation partner supporting medical technology advancement</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://medtech.posspole.com/assetpartners/14.png</image:loc>
+      <image:title>Healthcare Technology Partner 14</image:title>
+      <image:caption>Leading medical technology partner in POSSPOLE MEDTECH's healthcare ecosystem</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://medtech.posspole.com/assetpartners/15.png</image:loc>
+      <image:title>Healthcare Technology Partner 15</image:title>
+      <image:caption>Innovative healthcare partner collaborating on cutting-edge medical solutions</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://medtech.posspole.com/assetpartners/16.png</image:loc>
+      <image:title>Healthcare Technology Partner 16</image:title>
+      <image:caption>Trusted medical innovation partner supporting POSSPOLE MEDTECH's mission</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Events and Experience Images -->
+  <url>
+    <loc>https://medtech.posspole.com/#events</loc>
+    <image:image>
+      <image:loc>https://medtech.posspole.com/assetpartners/Event1.jpeg</image:loc>
+      <image:title>POSSPOLE MEDTECH Healthcare Innovation Event</image:title>
+      <image:caption>Major healthcare technology event showcasing POSSPOLE MEDTECH's latest medical innovations and solutions</image:caption>
+      <image:geo_location>India</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://medtech.posspole.com/assetpartners/events.png</image:loc>
+      <image:title>Healthcare Technology Events</image:title>
+      <image:caption>POSSPOLE MEDTECH healthcare technology events and medical innovation conferences</image:caption>
+      <image:geo_location>India</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://medtech.posspole.com/assetpartners/exp.png</image:loc>
+      <image:title>Healthcare Technology Experience</image:title>
+      <image:caption>POSSPOLE MEDTECH's extensive experience in healthcare technology and medical innovation</image:caption>
+      <image:geo_location>India</image:geo_location>
+    </image:image>
+  </url>
+  
+  <!-- Product Portfolio Images -->
+  <url>
+    <loc>https://medtech.posspole.com/#products</loc>
+    <image:image>
+      <image:loc>https://medtech.posspole.com/assetpartners/p1.jpeg</image:loc>
+      <image:title>POSSPOLE MEDTECH Product 1 - AI Healthcare Solution</image:title>
+      <image:caption>Advanced AI-powered healthcare product from POSSPOLE MEDTECH's medical technology portfolio</image:caption>
+      <image:geo_location>India</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://medtech.posspole.com/assetpartners/p2.jpeg</image:loc>
+      <image:title>POSSPOLE MEDTECH Product 2 - Digital Health Platform</image:title>
+      <image:caption>Innovative digital health platform showcasing POSSPOLE MEDTECH's healthcare technology expertise</image:caption>
+      <image:geo_location>India</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://medtech.posspole.com/assetpartners/p3.jpeg</image:loc>
+      <image:title>POSSPOLE MEDTECH Product 3 - Medical Device Innovation</image:title>
+      <image:caption>Cutting-edge medical device representing POSSPOLE MEDTECH's innovation in healthcare technology</image:caption>
+      <image:geo_location>India</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://medtech.posspole.com/assetpartners/p4.jpeg</image:loc>
+      <image:title>POSSPOLE MEDTECH Product 4 - Telemedicine Solution</image:title>
+      <image:caption>Advanced telemedicine solution from POSSPOLE MEDTECH's comprehensive healthcare technology suite</image:caption>
+      <image:geo_location>India</image:geo_location>
+    </image:image>
+  </url>
+  
+  <!-- Partner Company Logos -->
+  <url>
+    <loc>https://medtech.posspole.com/#partner-logos</loc>
+    <image:image>
+      <image:loc>https://medtech.posspole.com/assets/aum logo.jpg</image:loc>
+      <image:title>AUM Healthcare Technology Partner</image:title>
+      <image:caption>AUM logo - Strategic healthcare technology partner collaborating with POSSPOLE MEDTECH</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://medtech.posspole.com/assets/decodeage logo.jpeg</image:loc>
+      <image:title>DecodeAge Healthcare Partner</image:title>
+      <image:caption>DecodeAge logo - Healthcare innovation partner working with POSSPOLE MEDTECH</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://medtech.posspole.com/assets/deep holistics.jpg</image:loc>
+      <image:title>Deep Holistics Medical Partner</image:title>
+      <image:caption>Deep Holistics logo - Medical technology partner in POSSPOLE MEDTECH's ecosystem</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://medtech.posspole.com/assets/manentia_ai_logo.jpeg</image:loc>
+      <image:title>Manentia AI Healthcare Partner</image:title>
+      <image:caption>Manentia AI logo - AI healthcare partner collaborating with POSSPOLE MEDTECH</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://medtech.posspole.com/assets/navigation science.png</image:loc>
+      <image:title>Navigation Science Medical Partner</image:title>
+      <image:caption>Navigation Science logo - Medical technology partner supporting POSSPOLE MEDTECH</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://medtech.posspole.com/assets/ostrichlogo.jpeg</image:loc>
+      <image:title>Ostrich Healthcare Technology Partner</image:title>
+      <image:caption>Ostrich logo - Healthcare technology partner in POSSPOLE MEDTECH's network</image:caption>
+    </image:image>
+  </url>
+  
+</urlset>
