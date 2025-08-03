@@ -3,10 +3,10 @@
 export const seoConfig = {
   // Default site information
   siteName: 'POSSPOLE MEDTECH',
-  siteUrl: 'https://posspolemedtech.com',
+  siteUrl: 'https://medtech.posspole.com',
   defaultTitle: 'POSSPOLE MEDTECH - Revolutionizing Healthcare Technology',
   defaultDescription: 'POSSPOLE MEDTECH is pioneering cutting-edge healthcare technologies to create a unified vision for global health, bringing together science, data, and human expertise.',
-  defaultKeywords: 'healthcare technology, medical innovation, AI healthcare, digital health, medical devices, healthcare solutions, telemedicine, health tech, medical AI, healthcare analytics',
+  defaultKeywords: 'posspole, posspolemedtech, POSSPOLE MEDTECH, posspole medtech, posspole healthcare, healthcare technology, medical innovation, AI healthcare, digital health, medical devices, healthcare solutions, telemedicine, health tech, medical AI, healthcare analytics',
   defaultImage: '/assets/posspole.png',
   twitterHandle: '@posspolemedtech', // Update when available
   
@@ -17,7 +17,7 @@ export const seoConfig = {
     foundingYear: '2024',
     industry: 'Healthcare Technology',
     location: 'India',
-    email: 'contact@posspolemedtech.com', // Update with actual email
+    email: 'contact@medtech.posspole.com', // Update with actual email
     phone: '+91-XXXXXXXXXX', // Update with actual phone
   },
   
@@ -26,31 +26,31 @@ export const seoConfig = {
     home: {
       title: 'POSSPOLE MEDTECH - Revolutionizing Healthcare Technology',
       description: 'POSSPOLE MEDTECH is pioneering cutting-edge healthcare technologies to create a unified vision for global health, bringing together science, data, and human expertise.',
-      keywords: 'healthcare technology, medical innovation, AI healthcare, digital health, medical devices, healthcare solutions, telemedicine, health tech, medical AI, healthcare analytics, POSSPOLE MEDTECH',
+      keywords: 'posspole, posspolemedtech, POSSPOLE MEDTECH, posspole medtech, posspole healthcare, healthcare technology, medical innovation, AI healthcare, digital health, medical devices, healthcare solutions, telemedicine, health tech, medical AI, healthcare analytics',
       path: '/',
     },
     solutions: {
       title: 'Healthcare Solutions | POSSPOLE MEDTECH',
       description: 'Discover our innovative healthcare solutions designed to transform medical practices and improve patient outcomes through cutting-edge technology.',
-      keywords: 'healthcare solutions, medical technology, digital health solutions, AI medical devices, healthcare innovation, medical software',
+      keywords: 'posspole solutions, posspolemedtech solutions, healthcare solutions, medical technology, digital health solutions, AI medical devices, healthcare innovation, medical software',
       path: '/#solutions',
     },
     services: {
       title: 'Healthcare Services | POSSPOLE MEDTECH',
       description: 'Comprehensive healthcare services and products designed to revolutionize medical care and enhance patient experiences.',
-      keywords: 'healthcare services, medical services, telemedicine, digital health services, medical consultation, healthcare products',
+      keywords: 'posspole services, posspolemedtech services, healthcare services, medical services, telemedicine, digital health services, medical consultation, healthcare products',
       path: '/#services',
     },
     partners: {
       title: 'Our Partners | POSSPOLE MEDTECH',
       description: 'Meet our trusted partners in healthcare innovation. Together, we are building the future of medical technology.',
-      keywords: 'healthcare partners, medical technology partners, healthcare collaboration, medical innovation partners',
+      keywords: 'posspole partners, posspolemedtech partners, healthcare partners, medical technology partners, healthcare collaboration, medical innovation partners',
       path: '/#partners',
     },
     contact: {
       title: 'Contact Us | POSSPOLE MEDTECH',
       description: 'Get in touch with POSSPOLE MEDTECH to learn more about our healthcare solutions and how we can transform your medical practice.',
-      keywords: 'contact POSSPOLE MEDTECH, healthcare consultation, medical technology inquiry, healthcare solutions contact',
+      keywords: 'contact posspole, contact posspolemedtech, contact POSSPOLE MEDTECH, healthcare consultation, medical technology inquiry, healthcare solutions contact',
       path: '/#contact',
     },
   },
@@ -61,8 +61,8 @@ export const seoConfig = {
       '@context': 'https://schema.org',
       '@type': 'Organization',
       name: 'POSSPOLE MEDTECH',
-      url: 'https://posspolemedtech.com',
-      logo: 'https://posspolemedtech.com/assets/posspole.png',
+      url: 'https://medtech.posspole.com',
+      logo: 'https://medtech.posspole.com/assets/posspole.png',
       description: 'POSSPOLE MEDTECH is pioneering cutting-edge healthcare technologies to create a unified vision for global health, bringing together science, data, and human expertise.',
       foundingDate: '2024',
       industry: 'Healthcare Technology',
@@ -86,7 +86,7 @@ export const seoConfig = {
       '@context': 'https://schema.org',
       '@type': 'WebSite',
       name: 'POSSPOLE MEDTECH',
-      url: 'https://posspolemedtech.com',
+      url: 'https://medtech.posspole.com',
       description: 'POSSPOLE MEDTECH is pioneering cutting-edge healthcare technologies to create a unified vision for global health, bringing together science, data, and human expertise.',
       publisher: {
         '@type': 'Organization',
@@ -97,7 +97,7 @@ export const seoConfig = {
       '@context': 'https://schema.org',
       '@type': 'MedicalOrganization',
       name: 'POSSPOLE MEDTECH',
-      url: 'https://posspolemedtech.com',
+      url: 'https://medtech.posspole.com',
       description: 'Healthcare technology company specializing in innovative medical solutions',
       medicalSpecialty: 'Healthcare Technology',
     },

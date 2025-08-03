@@ -10,7 +10,7 @@ Allow: /assets/
 Allow: /public/
 
 # Sitemap location
-Sitemap: https://posspolemedtech.com/sitemap.xml
+Sitemap: https://medtech.posspole.com/sitemap.xml
 
 # Crawl delay (optional, helps prevent server overload)
 Crawl-delay: 1
