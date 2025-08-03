@@ -321,6 +321,22 @@ export const seoConfig = {
       name: 'MobileOptimized',
       content: '320',
     },
+    {
+      name: 'google-analytics',
+      content: 'G-XWVFH7WPQG',
+    },
+    {
+      name: 'gtag-config',
+      content: 'G-XWVFH7WPQG',
+    },
+    {
+      name: 'analytics-domain',
+      content: 'medtech.posspole.com',
+    },
+    {
+      name: 'measurement-id',
+      content: 'G-XWVFH7WPQG',
+    },
   ],
 };
 
