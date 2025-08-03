@@ -48,13 +48,12 @@ Crawl-delay: 1
 Sitemap: https://medtech.posspole.com/sitemap-index.xml
 Sitemap: https://medtech.posspole.com/sitemap.xml
 Sitemap: https://medtech.posspole.com/sitemap-services.xml
-Sitemap: https://medtech.posspole.com/sitemap-images.xml
-Sitemap: https://medtech.posspole.com/sitemap-news.xml
 
 # Future sitemaps for enhanced indexing
+# Sitemap: https://medtech.posspole.com/sitemap-images.xml
+# Sitemap: https://medtech.posspole.com/sitemap-news.xml
 # Sitemap: https://medtech.posspole.com/sitemap-products.xml
 # Sitemap: https://medtech.posspole.com/sitemap-blog.xml
-# Sitemap: https://medtech.posspole.com/sitemap-videos.xml
 
 # Clean URLs directive
 Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content
